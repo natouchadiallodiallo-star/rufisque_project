@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de Rufisque</title>
+
+    <style>
+        .galerie-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.galerie-photos img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 25px 0 40px;
+}
+
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 25px 0 40px;
+}
+
+.galerie img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+    .galerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+ {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.texte-ville {
+    flex: 1;
+}
+
+.photo-ville {
+    width: 380px;
+    flex-shrink: 0;
+}
+
+.photo-ville img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .presentation-ville {
+        flex-direction: column;
+    }
+
+    .photo-ville {
+        width: 100%;
+    }
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        header {
+            background: #123c36;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+       .banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+    background: #123c36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.banner video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 35, 30, 0.55);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+        .content {
+            padding: 70px 10%;
+            line-height: 1.9;
+        }
+
+        .content h2 {
+            color: #123c36;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .photo {
+            height: 350px;
+            background: #e2e8e3;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            background: #f3f6f3;
+            padding: 35px;
+            border-left: 5px solid #d5aa54;
+            margin-top: 30px;
+        }
+
+        footer {
+            background: #123c36;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+        .banner {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: #123c36;
+}
+
+.video-fond {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+}
+
+.texte-banner {
+    position: relative;
+    z-index: 2;
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 35, 30, 0.50);
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RUFISQUE</div>
+
+    <nav>
+    <a href="/">Accueil</a>
+    <a href="/apropos/">À propos</a>
+    <a href="/destinations/">Destinations</a>
+    <a href="/contact/">Contact</a>
+</nav>
+</header>
+
+<section class="banner">
+
+    <video autoplay muted loop playsinline class="video-fond">
+        <source src="{% static 'quartier/images/apropos.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="texte-banner">
+        <h1>À propos de Rufisque</h1>
+        <p>Une ville au cœur de l'histoire et de l'identité sénégalaise.</p>
+    </div>
+
+</section>
+
+<section class="content">
+
+    <!-- IMAGE PANORAMIQUE DE RUFISQUE À AJOUTER ICI -->
+    <div class="presentation-ville">
+    <div class="texte-ville">
+        <h2>Présentation de la ville</h2>
+        <p>
+            Rufisque est une ville située dans la région de Dakar,
+            au Sénégal. Connue pour son histoire, son patrimoine
+            et son identité culturelle, elle occupe une place
+            importante dans le paysage urbain sénégalais.
+        </p>
+    </div>
+
+    <div class="galerie">
+    <img src="{% static 'quartier/images/histoire.jpg' %}" alt="Histoire de Rufisque">
+    <img src="{% static 'quartier/images/patrimoine2.jpg' %}" alt="Patrimoine">
+    <img src="{% static 'quartier/images/ville.jpg' %}" alt="Ville de Rufisque">
+    <img src="{% static 'quartier/images/monument.jpg' %}" alt="Monument de Rufisque">
+</div>
+</div>
+
+    <h2>Situation géographique</h2>
+
+    <p>
+        Située sur la côte atlantique, Rufisque bénéficie
+        d'une position géographique qui a contribué à son
+        développement historique, économique et social.
+    </p>
+
+    <!-- IMAGE DE LA CÔTE OU D'UNE CARTE DE RUFISQUE À AJOUTER ICI -->
+    <div class="photo">
+        <div class="galerie">
+    <img src="{% static 'quartier/images/carte.jpg' %}" alt="Carte de Rufisque">
+    <img src="{% static 'quartier/images/littoral2.jpg' %}" alt="Littoral">
+    <img src="{% static 'quartier/images/plage.jpg' %}" alt="Plage">
+    <img src="{% static 'quartier/images/paysage.jpg' %}" alt="Paysage de Rufisque">
+</div>
+    </div>
+
+    <h2>Une identité unique</h2>
+
+    <p>
+        Rufisque se distingue par la richesse de ses traditions,
+        la diversité de ses activités et l'attachement de ses
+        habitants à leur ville.
+    </p>
+
+    <div class="highlight">
+        <h2>Notre objectif</h2>
+        <p>
+            Faire découvrir Rufisque, valoriser son patrimoine
+            et partager ses richesses avec tous ceux qui
+            souhaitent mieux connaître cette ville.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    <p>Découvrir Rufisque | © 2026</p>
+</footer>
+
+</body>
+</html>

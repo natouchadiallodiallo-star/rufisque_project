@@ -1,0 +1,375 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - Rufisque</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            color: #263238;
+        }
+
+        /* MENU */
+
+        header {
+            background: #123c36;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f4c66a;
+        }
+
+        /* BANNIÈRE AVEC PHOTO EN FOND */
+
+        .banner {
+    min-height: 400px;
+
+    background:
+        linear-gradient(rgba(0, 35, 30, 0.55),
+                        rgba(0, 35, 30, 0.55)),
+        url("{% static 'quartier/images/accueil.jpg' %}")
+        center/cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+        .banner h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 20px;
+            line-height: 1.7;
+        }
+
+        /* SECTION CONTACT */
+
+        .contact-section {
+            padding: 65px 8%;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #123c36;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 35px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* COORDONNÉES */
+
+        .contact-info {
+            background: #123c36;
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+
+        /* FORMULAIRE */
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+        }
+
+        .contact-form h3 {
+            color: #123c36;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #e8b957;
+            color: #173c35;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #f4c66a;
+        }
+
+        /* PIED DE PAGE */
+
+        footer {
+            background: #123c36;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        /* VERSION MOBILE */
+
+        @media(max-width: 750px) {
+
+            header {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .banner h1 {
+                font-size: 35px;
+            }
+
+            .banner p {
+                font-size: 17px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 45px 6%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU DE NAVIGATION -->
+
+    <header>
+
+        <div class="logo">
+            <a href="/">RUFISQUE</a>
+        </div>
+
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/apropos/">À propos</a>
+            <a href="/destinations/">Destinations</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- BANNIÈRE CONTACT AVEC PHOTO -->
+
+    <section class="banner">
+
+        <h1>Contactez-nous</h1>
+
+        <p>
+            Une question ou une suggestion ?
+            Nous sommes à votre écoute.
+        </p>
+
+    </section>
+
+
+    <!-- CONTENU CONTACT -->
+
+    <section class="contact-section">
+
+        <h2>Restons en contact</h2>
+
+        <p class="intro">
+            Vous souhaitez en savoir davantage sur Rufisque,
+            ses destinations, son histoire ou ses richesses ?
+            N'hésitez pas à nous contacter.
+            Nous serons ravis de vous répondre.
+        </p>
+
+        <div class="contact-container">
+
+            <!-- INFORMATIONS -->
+
+            <div class="contact-info">
+
+                <h3>Nos coordonnées</h3>
+
+                <p>
+                    <strong>Notre ville :</strong><br>
+                    Rufisque, Sénégal
+                </p>
+
+                <p>
+                    <strong>Notre objectif :</strong><br>
+                    Faire découvrir l'histoire, la culture,
+                    les paysages et les richesses de Rufisque.
+                </p>
+
+                <p>
+                    <strong>Votre avis compte !</strong><br>
+                    Vos questions et suggestions nous aident
+                    à améliorer ce site.
+                </p>
+
+            </div>
+
+            <!-- FORMULAIRE -->
+
+            <div class="contact-form">
+
+                <h3>Envoyez-nous un message</h3>
+
+                <form>
+
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input
+                            type="text"
+                            id="nom"
+                            placeholder="Votre nom"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse e-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Votre adresse e-mail"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <input
+                            type="text"
+                            id="sujet"
+                            placeholder="Objet de votre message"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea
+                            id="message"
+                            placeholder="Écrivez votre message ici..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Envoyer le message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PIED DE PAGE -->
+
+    <footer>
+        <p>
+            © 2026 - Découvrir Rufisque |
+            Tous droits réservés
+        </p>
+    </footer>
+
+</body>
+</html>

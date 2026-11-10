@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture et traditions - Rufisque</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: white;
+        }
+
+        header {
+            background: #123c36;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .banner {
+            background: #315e53;
+            color: white;
+            text-align: center;
+            padding: 90px 10%;
+        }
+
+        .banner h1 {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 65px 10% 30px;
+        }
+
+        h2 {
+            color: #123c36;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .culture-section {
+            padding: 45px 8% 75px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            background: #f5f7f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .photo {
+            height: 230px;
+            background: #dce5df;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            color: #176052;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            line-height: 1.7;
+        }
+
+        .tradition {
+            background: #f3f6f3;
+            padding: 70px 10%;
+            text-align: center;
+        }
+
+        .tradition p {
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #123c36;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media(max-width: 700px) {
+            header {
+                gap: 18px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .banner h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RUFISQUE</div>
+
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/apropos/">À propos</a>
+        <a href="/destinations/">Destinations</a>
+        <a href="/culture/">Culture</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h1>Culture et traditions</h1>
+    <p>
+        Découvrez l'identité culturelle de Rufisque,
+        ses traditions et la richesse de ses habitants.
+    </p>
+</section>
+
+<section class="intro">
+    <h2>Une culture riche et vivante</h2>
+    <p>
+        La culture de Rufisque se découvre à travers
+        ses traditions, ses pratiques quotidiennes,
+        sa gastronomie, ses rencontres et ses expressions artistiques.
+        Elle témoigne de la richesse de son patrimoine humain.
+    </p>
+</section>
+
+<section class="culture-section">
+
+    <div class="cards">
+
+        <!-- PHOTO DES TENUES TRADITIONNELLES À AJOUTER ICI -->
+        <div class="card">
+            <div class="photo"></div>
+            <div class="card-content">
+                <h3>Tenues traditionnelles</h3>
+                <p>
+                    Découvrez les vêtements traditionnels,
+                    les tissus et l'élégance des tenues sénégalaises.
+                </p>
+            </div>
+        </div>
+
+        <!-- PHOTO DE LA GASTRONOMIE À AJOUTER ICI -->
+        <div class="card">
+            <div class="photo"></div>
+            <div class="card-content">
+                <h3>Gastronomie</h3>
+                <p>
+                    Explorez les saveurs de la cuisine sénégalaise
+                    et les spécialités partagées en famille.
+                </p>
+            </div>
+        </div>
+
+        <!-- PHOTO DE LA MUSIQUE ET DE LA DANSE À AJOUTER ICI -->
+        <div class="card">
+            <div class="photo"></div>
+            <div class="card-content">
+                <h3>Musique et danse</h3>
+                <p>
+                    Découvrez les rythmes, les danses
+                    et les expressions artistiques du Sénégal.
+                </p>
+            </div>
+        </div>
+
+        <!-- PHOTO D'UNE CÉLÉBRATION À AJOUTER ICI -->
+        <div class="card">
+            <div class="photo"></div>
+            <div class="card-content">
+                <h3>Fêtes et célébrations</h3>
+                <p>
+                    Découvrez les moments de rassemblement,
+                    les cérémonies et les événements culturels.
+                </p>
+            </div>
+        </div>
+
+        <!-- PHOTO DE L'ARTISANAT À AJOUTER ICI -->
+        <div class="card">
+            <div class="photo"></div>
+            <div class="card-content">
+                <h3>Artisanat</h3>
+                <p>
+                    Partez à la découverte du savoir-faire
+                    et de la créativité des artisans.
+                </p>
+            </div>
+        </div>
+
+        <!-- PHOTO DE LA VIE COMMUNAUTAIRE À AJOUTER ICI -->
+        <div class="card">
+            <div class="photo"></div>
+            <div class="card-content">
+                <h3>Vie communautaire</h3>
+                <p>
+                    Découvrez les liens sociaux, le partage
+                    et l'esprit de solidarité entre les habitants.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="tradition">
+    <h2>Notre culture, notre identité</h2>
+    <p>
+        Préserver les traditions, valoriser les savoir-faire
+        et transmettre notre patrimoine culturel aux générations
+        futures : autant de façons de faire vivre l'identité
+        de Rufisque.
+    </p>
+</section>
+
+<footer>
+    <p>Découvrir Rufisque | © 2026</p>
+    <p>Une ville, une histoire, une identité.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Découvrir Rufisque</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7f5;
+            color: #263b35;
+        }
+
+        header {
+            background: #123c36;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e5b75c;
+        }
+
+        .banner {
+            position: relative;
+            height: 380px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: #123c36;
+        }
+
+        .video-fond {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 35, 30, 0.55);
+        }
+
+        .texte-banner {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .texte-banner h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .texte-banner p {
+            font-size: 18px;
+        }
+
+        .introduction {
+            text-align: center;
+            max-width: 850px;
+            margin: 55px auto 35px;
+            padding: 0 20px;
+        }
+
+        .introduction h2 {
+            color: #245747;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .introduction p {
+            line-height: 1.8;
+        }
+
+        .destinations {
+            padding: 20px 7% 60px;
+        }
+
+        .grille {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: #245747;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card-content p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        footer {
+            background: #123c36;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .grille {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            .grille {
+                grid-template-columns: 1fr;
+            }
+
+            .texte-banner h1 {
+                font-size: 30px;
+            }
+
+            .banner {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>RUFISQUE</h2>
+
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/apropos/">À propos</a>
+        <a href="/destinations/">Destinations</a>
+        <a href="/contact/">Contact</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <video autoplay muted loop playsinline class="video-fond">
+        <source src="{% static 'quartier/images/destinations.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="texte-banner">
+        <h1>Découvrez Rufisque</h1>
+        <p>Explorez ses paysages, son patrimoine et ses traditions.</p>
+    </div>
+</section>
+
+<section class="introduction">
+    <h2>Explorez les richesses de Rufisque</h2>
+    <p>
+        Entre histoire, culture, gastronomie, littoral et nature,
+        Rufisque vous invite à découvrir ses nombreux trésors
+        et à vivre une expérience authentique au Sénégal.
+    </p>
+</section>
+
+<section class="destinations">
+    <div class="grille">
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/plage.jpg' %}" alt="Vieux Rufisque">
+            </div>
+            <div class="card-content">
+                <h3>Le vieux Rufisque</h3>
+                <p>Découvrez les anciennes rues, les bâtiments historiques et l'architecture qui témoignent du riche passé de la ville.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/carte.jpg' %}" alt="Littoral de Rufisque">
+            </div>
+            <div class="card-content">
+                <h3>Le littoral et les plages</h3>
+                <p>Profitez des paysages marins, des plages, des activités de pêche et de la beauté du littoral rufisquois.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/paysage.jpg' %}" alt="Marchés de Rufisque">
+            </div>
+            <div class="card-content">
+                <h3>Les marchés</h3>
+                <p>Plongez dans l'ambiance des marchés, découvrez les produits locaux et observez le dynamisme du commerce.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/culture.jpg' %}" alt="Culture de Rufisque">
+            </div>
+            <div class="card-content">
+                <h3>Culture et traditions</h3>
+                <p>Découvrez les danses, les musiques, les cérémonies, les vêtements traditionnels et les coutumes locales.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/gastronomie.jpg' %}" alt="Gastronomie sénégalaise">
+            </div>
+            <div class="card-content">
+                <h3>Gastronomie</h3>
+                <p>Goûtez aux spécialités sénégalaises, aux plats traditionnels et aux saveurs qui font la richesse de la cuisine locale.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/monument.jpg' %}" alt="Artisanat local">
+            </div>
+            <div class="card-content">
+                <h3>Artisanat local</h3>
+                <p>Explorez le savoir-faire des artisans, leurs créations, leurs objets traditionnels et leurs métiers.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/littoral2.jpg' %}" alt="Nature de Rufisque">
+            </div>
+            <div class="card-content">
+                <h3>Nature et environnement</h3>
+                <p>Admirez les paysages naturels et découvrez les enjeux de protection du littoral et de l'environnement.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/mairie.jpg' %}" alt="maire de Rufisque">
+            </div>
+            <div class="card-content">
+                <h3>maire de Rufisque</h3>
+                <p>Oumar CISSÉ,
+Nouveau Maire de la ville de Rufisque au
+Sénégal
+Dr Oumar CISSÉ est un Ingénieur polytechnicien en génie civil. Il est aussi titulaire d'un master en environnement (université Senghor) et d'un Ph.D (Doctorat) en aménagement urbain de l'université de Montréal (avec distinction). Il est donc ingénieur civil, environnementaliste et urbaniste.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="photo">
+                <img src="{% static 'quartier/images/patrimoine.jpg' %}" alt="Lieux incontournables">
+            </div>
+            <div class="card-content">
+                <h3>Les lieux incontournables</h3>
+                <p>Partez à la découverte des endroits emblématiques, des espaces de rencontre et des lieux qui donnent son identité à Rufisque.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Découvrir Rufisque | Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
